@@ -1,44 +1,111 @@
-import { TUser, TProduct, TPurchase } from "./types";
+import { TUser, TProduct, TPurchase, Category } from "./types";
 
 export const users: TUser[] = [
-    {
-        id: "1",
-        email: "aluno@labenu.com",
-        password: "aluno1234",
-    },
-    {
-        id: "2",
-        email: "aluno2@labenu.com",
-        password: "aluno21234",
-    }
+  {
+    id: "1",
+    email: "aluno@labenu.com",
+    password: "aluno1234",
+  },
+  {
+    id: "2",
+    email: "aluno2@labenu.com",
+    password: "aluno21234",
+  },
 ];
 
 export const products: TProduct[] = [
-    {
-        id: "1",
-        name: "Harry Potter",
-        price: 30,
-        category: "livro",
-    },
-    {
-        id: "2",
-        name: "Corte de espinhos e rosas",
-        price: 40,
-        category: "livro",
-    }
+  {
+    id: "1",
+    name: "Produto 1",
+    price: 30,
+    category: Category.ACCESSORIES,
+  },
+  {
+    id: "2",
+    name: "Produto 2",
+    price: 40,
+    category: Category.CLOTHES_AND_SHOES,
+  },
 ];
 
-export const purchases: TPurchase[] =[
-    {
-        userId: "1",
-        productId: "1",
-        quantity: 2,
-        totalPrice: 60,
-    },
-    {
-        userId: "2",
-        productId: "2",
-        quantity: 2,
-        totalPrice: 80,
-    }
-]
+export const purchases: TPurchase[] = [
+  {
+    userId: "1",
+    productId: "1",
+    quantity: 2,
+    totalPrice: 60,
+  },
+  {
+    userId: "2",
+    productId: "2",
+    quantity: 2,
+    totalPrice: 80,
+  },
+];
+
+export function CreateUser(id: string, email: string, password: string) {
+  const newUser: TUser = { id, email, password };
+  users.push(newUser);
+  console.log("Usuário cadastrado com sucesso!");
+}
+
+export function getAllUsers(users: TUser[]): TUser[] {
+  return users;
+}
+
+export function createProduct(
+  id: string,
+  name: string,
+  price: number,
+  category: Category
+) {
+  const newProduct: TProduct = { id, name, price, category };
+  products.push(newProduct);
+  console.log("Produto cadastrado com sucesso!");
+}
+
+export function CreateProduct(
+  id: string,
+  name: string,
+  price: number,
+  category: Category
+) {
+  const newProduct: TProduct = { id, name, price, category };
+  products.push(newProduct);
+  console.log("Produto cadastrado com sucesso!");
+}
+
+export function getAllProducts(products: TProduct[]): TProduct[] {
+  return products;
+}
+
+export function getProductById(idToSearch: string): TProduct[] | undefined {
+  return products.filter((product: TProduct) => {
+    return product.id === idToSearch;
+  });
+}
+
+export function queryProductsByName(q: string): TProduct[] | undefined {
+  return products.filter((product: TProduct) => {
+    return product.name.toLowerCase() === q;
+  });
+}
+
+export function createPurchase(
+  userId: string,
+  productId: string,
+  quantity: number,
+  totalPrice: number
+) {
+  const newPurchase: TPurchase = { userId, productId, quantity, totalPrice };
+  purchases.push(newPurchase);
+  console.log("Compra realizada com sucesso");
+}
+
+export function getAllPurchasesFromUserId(
+  userIdToSearch: string
+): TPurchase[] | undefined {
+  return purchases.filter((purchase) => {
+    return purchase.userId === userIdToSearch;
+  });
+}
