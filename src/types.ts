@@ -8,7 +8,7 @@ export type TProduct = {
     id: string
     name: string
     price: number
-    category: category
+    category: Category
 }
 
 export type TPurchase = {
