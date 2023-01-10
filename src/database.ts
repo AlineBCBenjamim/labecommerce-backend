@@ -3,26 +3,26 @@ import { TUser, TProduct, TPurchase, Category } from "./types";
 export const users: TUser[] = [
   {
     id: "1",
-    email: "aluno@labenu.com",
-    password: "aluno1234",
+    email: "mariaf@labenu.com",
+    password: "mariasol1234",
   },
   {
     id: "2",
-    email: "aluno2@labenu.com",
-    password: "aluno21234",
+    email: "alicem2@labenu.com",
+    password: "alicema21234",
   },
 ];
 
 export const products: TProduct[] = [
   {
     id: "1",
-    name: "Produto 1",
+    name: "Brinco",
     price: 30,
     category: Category.ACCESSORIES,
   },
   {
     id: "2",
-    name: "Produto 2",
+    name: "Vestido",
     price: 40,
     category: Category.CLOTHES_AND_SHOES,
   },
@@ -85,7 +85,7 @@ export function getProductById(idToSearch: string): TProduct[] | undefined {
   });
 }
 
-export function queryProductsByName(q: string): TProduct[] | undefined {
+export function queryProductsByName(q: string): TProduct[] {
   return products.filter((product: TProduct) => {
     return product.name.toLowerCase() === q;
   });
@@ -109,3 +109,4 @@ export function getAllPurchasesFromUserId(
     return purchase.userId === userIdToSearch;
   });
 }
+
