@@ -4,12 +4,12 @@
 
 ---
 ## Índice
-- [Introdução](#-introducao)  
-- [Tecnologias utilizadas](#-tecnologias-utilizadas)
-- [Funcionabilidades do Projeto](#-funcionabilidades-do-projeto)
-- [Aplicações utilizadas](#-aplicacoes)
-- [Documentação](#-documentacao)
-- [Rodando o Projeto](#-Rodando)
+* [Introdução](#-introducao)  
+* [Tecnologias utilizadas](#-tecnologias-utilizadas)
+* [Funcionabilidades do Projeto](#-funcionabilidades-do-projeto)
+* [Aplicações utilizadas](#-aplicacoes)
+* [Documentação](#-documentacao)
+* [Rodando o Projeto](#-Rodando)
 ---
 ## 📑Introdução
     Esse projeto se trata de um Labecommerce.
@@ -24,20 +24,20 @@
 5. ``SQL``
 ---
 ## 📱Funcionabilidades do Projeto
-- [ ] Cadastro de usuário:
+- [x] Cadastro de usuário:
 - Id;
 - E-mail;
 - Password.
 <br>
 
-- [ ] Cadastro de produto:
+- [x] Cadastro de produto:
 - Id;
 - Name;
 - Price;
 - Category.
 <br> 
 
-- [ ] Cadastro de compra:
+- [x] Cadastro de compra:
 - User Id;
 - Product Id;
 - Quantity;
@@ -48,12 +48,13 @@
 - Postman
 ---
 ## 📋Documentação
-<https://documenter.getpostman.com/view/24461105/2s8ZDVZNoR>
+- ``Postman`` <https://documenter.getpostman.com/view/24461105/2s8ZDVZNoR>
+
 ---
 ## 📀Rodando o Projeto
 
 - Rode o console na pasta em que você baixou os arquivos;
 
-- Insira o comando npm install;
+- Insira o comando ``npm install``;
 
-- Depois, o comando npm run dev para rodar no navegador.
+- Depois, o comando ``npm run dev`` para rodar no navegador.
