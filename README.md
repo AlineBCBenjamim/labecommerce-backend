@@ -4,12 +4,13 @@
 
 ---
 ## Índice
-* [Introdução](#-introducao)  
-* [Tecnologias utilizadas](#-tecnologias-utilizadas)
-* [Funcionabilidades do Projeto](#-funcionabilidades-do-projeto)
-* [Aplicações utilizadas](#-aplicacoes)
-* [Documentação](#-documentacao)
-* [Rodando o Projeto](#-Rodando)
+* [📑Introdução](#introducao)  
+* [⚙️Tecnologias utilizadas](#tecnologias-utilizadas)
+* [📱Funcionabilidades do Projeto](#funcionabilidades-do-projeto)
+* [✒️Aplicações utilizadas](#aplicacoes)
+* [📋Documentação](#documentacao)
+* [📀Rodando o Projeto](#Rodando)
+
 ---
 ## 📑Introdução
     Esse projeto se trata de um Labecommerce.
