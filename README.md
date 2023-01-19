@@ -50,3 +50,8 @@
 - Insira o comando ``npm install``;
 
 - Depois, o comando ``npm run dev`` para rodar no navegador.
+
+---
+## 📌Autora
+
+- ``Aline Benjamim``
