@@ -1,4 +1,4 @@
--- Active: 1674140196318@@127.0.0.1@3306
+-- Active: 1674308440844@@127.0.0.1@3306
 
 CREATE TABLE users(
     id TEXT PRIMARY KEY UNIQUE NOT NULL,
@@ -80,3 +80,43 @@ LIMIT 20 OFFSET 1;
 SELECT * FROM products
 WHERE price >= 100 AND price <= 300
 ORDER BY price ASC;
+
+-- Criação tabela de pedido 
+CREATE TABLE purchases (
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    total_price REAL NOT NULL,
+    paid INTEGER NOT NULL,
+    delivered_at TEXT,
+    buyer_id TEXT NOT NULL,
+    FOREIGN KEY (buyer_id) REFERENCES users(id)
+);
+-- verificar a tabela
+SELECT * FROM purchases;
+
+--Popular a Tabela
+--Crie dois pedidos para cada usuário cadastrado 
+
+INSERT INTO purchases(id, total_price, paid, buyer_id)
+VALUES ("c001", 120, 0, "u002"),
+       ("c002", 180, 0, "u002"), 
+       ("c003", 200, 0, "u003"), 
+       ("c004", 85, 0, "u003"), 
+       ("c005", 200, 0, "u004"), 
+       ("c006", 85, 0, "u004"); 
+
+--Edite o status da data de entrega de um pedido 
+
+UPDATE purchases
+SET paid  = 1, delivered_at = DATETIME('now')
+WHERE id = "c001";
+
+-- Crie uma query de consulta com JOIN, junção da tabelas (users e purchases)
+SELECT
+users.id AS idUsers,
+purchases.id AS idPurchases,
+purchases.total_price AS totalPrice,
+purchases.paid,
+purchases.delivered_at AS deliveredAt
+FROM purchases
+JOIN users ON purchases.buyer_id = users.id
+WHERE users.id = "u003";
